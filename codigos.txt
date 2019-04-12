@@ -1,0 +1,6 @@
+Utiliza estos codigos para entregar IA al torneo
+Escribe para que IA se utiliza el codigo
+
+1. 7f738 (alpha)
+2. b1888
+3. e2e18
