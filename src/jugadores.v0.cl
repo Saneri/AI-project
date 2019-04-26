@@ -1,6 +1,6 @@
 (use-package 'conecta4)
 ;(use-package '2362_P06_b1888)
-(use-package '2362_P06_7f738)
+;(use-package '2362_P06_7f738)
 
 (declaim #+sbcl(sb-ext:muffle-conditions style-warning))
 
@@ -35,20 +35,20 @@
                       (+ puntuacion-actual
                          (cond ((= abajo 0) 0)
                                ((= abajo 1) 10)
-                               ((= abajo 2) 100)
-                               ((= abajo 3) 1000))
+                               ((= abajo 2) 1000)
+                               ((= abajo 3) 100000))
                          (cond ((= (+ izq der) 0) 0)
                                ((= (+ izq der) 1) 10)
-                               ((= (+ izq der) 2) 100)
-                               ((>= (+ izq der) 3) 1000))
+                               ((= (+ izq der) 2) 1000)
+                               ((>= (+ izq der) 3) 100000))
                          (cond ((= (+ abajo-izq arriba-der) 0) 0)
                                ((= (+ abajo-izq arriba-der) 1) 10)
-                               ((= (+ abajo-izq arriba-der) 2) 100)
-                               ((>= (+ abajo-izq arriba-der) 3) 1000))
+                               ((= (+ abajo-izq arriba-der) 2) 1000)
+                               ((>= (+ abajo-izq arriba-der) 3) 100000))
 			 (cond ((= (+ abajo-der arriba-izq) 0) 0)
 			       ((= (+ abajo-der arriba-izq) 1) 10)
-			       ((= (+ abajo-der arriba-izq) 2) 100)
-			       ((>= (+ abajo-der arriba-izq) 3) 1000)))))
+			       ((= (+ abajo-der arriba-izq) 2) 1000)
+			       ((>= (+ abajo-der arriba-izq) 3) 100000)))))
               (let* ((altura (altura-columna tablero columna))
                      (fila (1- altura))
                      (abajo (contar-abajo tablero ficha-oponente columna fila))
@@ -62,20 +62,20 @@
                       (+ puntuacion-oponente
                          (cond ((= abajo 0) 0)
                                ((= abajo 1) 10)
-                               ((= abajo 2) 100)
-                               ((= abajo 3) 1000))
+                               ((= abajo 2) 1000)
+                               ((= abajo 3) 100000))
                          (cond ((= (+ izq der) 0) 0)
                                ((= (+ izq der) 1) 10)
-                               ((= (+ izq der) 2) 100)
-                               ((>= (+ izq der) 3) 1000))
+                               ((= (+ izq der) 2) 1000)
+                               ((>= (+ izq der) 3) 100000))
                          (cond ((= (+ abajo-izq arriba-der) 0) 0)
                                ((= (+ abajo-izq arriba-der) 1) 10)
-                               ((= (+ abajo-izq arriba-der) 2) 100)
-                               ((>= (+ abajo-izq arriba-der) 3) 1000))
+                               ((= (+ abajo-izq arriba-der) 2) 1000)
+                               ((>= (+ abajo-izq arriba-der) 3) 100000))
 			 (cond ((= (+ abajo-der arriba-izq) 0) 0)
 			       ((= (+ abajo-der arriba-izq) 1) 10)
-			       ((= (+ abajo-der arriba-izq) 2) 100)
-			       ((>= (+ abajo-der arriba-izq) 3) 1000))))))
+			       ((= (+ abajo-der arriba-izq) 2) 1000)
+			       ((>= (+ abajo-der arriba-izq) 3) 100000))))))
         (- puntuacion-actual puntuacion-oponente)))))
 
 
@@ -168,9 +168,9 @@
 				     :f-jugador #'f-jugador-negamax
 				     :f-eval #'f-eval-test))
 
-(defvar *jugador-mejor* (make-jugador :nombre 'jugador-mejor
-			      	      :f-jugador #'f-jugador-negamax
-				      :f-eval #'heuristica))
+;(defvar *jugador-mejor* (make-jugador :nombre 'jugador-mejor
+;			      	      :f-jugador #'f-jugador-negamax
+;				      :f-eval #'heuristica))
 
 ;; -------------------------------------------------------------------------------
 ;; Algunas partidas de ejemplo:
@@ -185,7 +185,7 @@
 ;(print (partida *jugador-humano* *jugador-humano*))
 ;(print (partida *jugador-humano* *jugador-aleatorio* 4))
 ;(print (partida *jugador-humano* *jugador-bueno* 4))
-;(print (partida *jugador-aleatorio* *jugador-humano*))
+;(print (partida *jugador-aleatorio* *jugador-humano* 5))
 
 ;; ----------------------------------------
 ;; Nuestros algoritmos
