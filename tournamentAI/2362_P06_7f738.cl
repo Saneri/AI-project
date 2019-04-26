@@ -2,7 +2,7 @@
 ; el código
 (:use :common-lisp :conecta4) ; el paquete usa common-lisp y conecta4
 (:export :heuristica :*alias*)) ; exporta la función de evaluación y un alias
-4
+
 (in-package 2362_P06_7f738)
 
 (defvar *alias* '|alpha|) ; alias que aparece en el ranking
