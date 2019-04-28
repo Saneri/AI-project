@@ -2,7 +2,7 @@
 ; el código
 (:use :common-lisp :conecta4) ; el paquete usa common-lisp y conecta4
 (:export :heuristica :*alias*)) ; exporta la función de evaluación y un alias
-4
+
 (in-package 2362_P06_b1888)
 
 (defvar *alias* '|beta|) ; alias que aparece en el ranking
@@ -33,7 +33,7 @@
                      (arriba-der (contar-arriba-derecha tablero ficha-actual columna fila)))
                 (setf puntuacion-actual
                       (+ puntuacion-actual
-			 (* (expt 0.75 (- altura alt))
+			 (* (expt 0.20 (- altura alt))
 			    (+
 			       (cond ((= abajo 0) 0)
                                      ((= abajo 1) 10)
@@ -62,7 +62,7 @@
                      (arriba-der (contar-arriba-derecha tablero ficha-oponente columna fila)))
                 (setf puntuacion-oponente
                       (+ puntuacion-oponente
-			 (* (expt 0.75 (- altura alt))
+			 (* (expt 0.20 (- altura alt))
 			    (+
                                (cond ((= abajo 0) 0)
                                      ((= abajo 1) 10)

@@ -2,7 +2,7 @@
 ; el código
 (:use :common-lisp :conecta4) ; el paquete usa common-lisp y conecta4
 (:export :heuristica :*alias*)) ; exporta la función de evaluación y un alias
-4
+
 (in-package 2362_P06_e2e18)
 
 (defvar *alias* '|gamma|) ; alias que aparece en el ranking
@@ -43,11 +43,11 @@
                          (cond ((= (+ abajo-izq arriba-der) 0) 0)
                                ((= (+ abajo-izq arriba-der) 1) 10)
                                ((= (+ abajo-izq arriba-der) 2) 1000)
-                               ((>= (+ abajo-izq arriba-der) 3) 10000))
+                               ((>= (+ abajo-izq arriba-der) 3) 100000))
 			 (cond ((= (+ abajo-der arriba-izq) 0) 0)
 			       ((= (+ abajo-der arriba-izq) 1) 10)
 			       ((= (+ abajo-der arriba-izq) 2) 1000)
-			       ((>= (+ abajo-der arriba-izq) 3) 10000)))))
+			       ((>= (+ abajo-der arriba-izq) 3) 100000)))))
               (let* ((altura (altura-columna tablero columna))
                      (fila (1- altura))
                      (abajo (contar-abajo tablero ficha-oponente columna fila))
@@ -62,18 +62,17 @@
                          (cond ((= abajo 0) 0)
                                ((= abajo 1) 10)
                                ((= abajo 2) 1000)
-                               ((= abajo 3) 100000))
+                               ((= abajo 3) 1000000))
                          (cond ((= (+ izq der) 0) 0)
                                ((= (+ izq der) 1) 10)
                                ((= (+ izq der) 2) 1000)
-                               ((>= (+ izq der) 3) 100000))
+                               ((>= (+ izq der) 3) 1000000))
                          (cond ((= (+ abajo-izq arriba-der) 0) 0)
                                ((= (+ abajo-izq arriba-der) 1) 10)
                                ((= (+ abajo-izq arriba-der) 2) 1000)
-                               ((>= (+ abajo-izq arriba-der) 3) 1000000))
+                               ((>= (+ abajo-izq arriba-der) 3) 100000))
 			 (cond ((= (+ abajo-der arriba-izq) 0) 0)
 			       ((= (+ abajo-der arriba-izq) 1) 10)
 			       ((= (+ abajo-der arriba-izq) 2) 1000)
-			       ((>= (+ abajo-der arriba-izq) 3) 1000000))))))
+			       ((>= (+ abajo-der arriba-izq) 3) 100000))))))
         (- puntuacion-actual puntuacion-oponente)))))
-

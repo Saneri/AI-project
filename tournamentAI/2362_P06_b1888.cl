@@ -33,7 +33,7 @@
                      (arriba-der (contar-arriba-derecha tablero ficha-actual columna fila)))
                 (setf puntuacion-actual
                       (+ puntuacion-actual
-			 (* (expt 0.75 (- altura alt))
+			 (* (expt 0.20 (- altura alt))
 			    (+
 			       (cond ((= abajo 0) 0)
                                      ((= abajo 1) 10)
@@ -62,7 +62,7 @@
                      (arriba-der (contar-arriba-derecha tablero ficha-oponente columna fila)))
                 (setf puntuacion-oponente
                       (+ puntuacion-oponente
-			 (* (expt 0.75 (- altura alt))
+			 (* (expt 0.20 (- altura alt))
 			    (+
                                (cond ((= abajo 0) 0)
                                      ((= abajo 1) 10)

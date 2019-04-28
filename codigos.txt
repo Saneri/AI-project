@@ -1,6 +1,7 @@
 Utiliza estos codigos para entregar IA al torneo
 Escribe para que IA se utiliza el codigo
 
-1. 7f738 (alpha)
-2. b1888 (beta)
-3. e2e18 (gamma)
+			evaluacion de altitud
+1. 7f738 (alpha) 		45%  
+2. b1888 (beta)			20%
+3. e2e18 (gamma)		0%
